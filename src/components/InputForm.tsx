@@ -4,6 +4,7 @@ import { FormState, queue } from "@/app/actions";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { Button } from "./Button";
+import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
 
 const MIN_ROWS = 5;
 const MORE_ROWS = 5;
@@ -17,19 +18,22 @@ export function InputForm() {
    const { pending } = useFormStatus();
    const [state, formAction] = useFormState(queue, initialState);
    return (
-      <form action={formAction} noValidate>
+      <form action={formAction}>
          <table className="border-separate border-spacing-y-2 sm:border-spacing-y-0">
             <thead className="border-0">
                <tr>
                   <th>Participants 🥳</th>
                </tr>
             </thead>
-            <tbody className="peer sm:space-y-2">
+            <tbody className="sm:space-y-2">
                {Array.from({ length: participantCount }).map((_, index) => (
                   <InputRow key={index} index={index} />
                ))}
             </tbody>
             <caption aria-live="polite" className="caption-bottom text-red-500">
+               {state.message && (
+                  <ExclamationCircleIcon className="mr-px inline-block h-5 w-5" />
+               )}
                {state?.message}&nbsp;
             </caption>
          </table>
@@ -76,7 +80,6 @@ function InputRow({ index }: InputRowProps) {
                onKeyDown={(e) => {
                   e.key === "Enter" && e.preventDefault();
                }}
-               pattern=".+@.+"
                className="-ms-px rounded-[inherit] border border-gray-200 bg-inherit px-4 py-3 pe-11 text-sm transition duration-200 focus-visible:z-10 focus-visible:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-chakra-focus invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
             />
          </td>
