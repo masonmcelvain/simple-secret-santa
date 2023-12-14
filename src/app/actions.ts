@@ -16,6 +16,11 @@ export async function queue(_prev: FormState, formData: FormData) {
       if (e instanceof Error) return { message: e.message };
       throw e;
    }
+   if (participants.length < 2) {
+      return {
+         message: "You can't play by yourself, silly! 😉",
+      };
+   }
    await EmailQueue.enqueue(participants);
    return { message: "" };
 }
