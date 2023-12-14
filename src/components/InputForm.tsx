@@ -32,7 +32,7 @@ export function InputForm() {
             </tbody>
             <caption aria-live="polite" className="caption-bottom text-red-500">
                {state.message && (
-                  <ExclamationCircleIcon className="mr-px inline-block h-5 w-5" />
+                  <ExclamationCircleIcon className="mr-2 inline-block h-5 w-5" />
                )}
                {state?.message}&nbsp;
             </caption>
