@@ -7,6 +7,8 @@ export type FormState = {
    message: string;
 };
 
+const MAX_SIZE = 100;
+
 export async function queue(_prev: FormState, formData: FormData) {
    let participants;
    try {
@@ -19,6 +21,26 @@ export async function queue(_prev: FormState, formData: FormData) {
    if (participants.length < 2) {
       return {
          message: "You can't play by yourself, silly! 😉",
+      };
+   }
+   if (participants.length > MAX_SIZE) {
+      return {
+         message:
+            "Boy you're popular! We don't support groups greater than 100 at this time, try a smaller group.",
+      };
+   }
+   const hasDuplicateEmails =
+      new Set(participants.map((p) => p.email)).size !== participants.length;
+   if (hasDuplicateEmails) {
+      return {
+         message: "No double dipping! Please list each email only once.",
+      };
+   }
+   const hasDuplicateNames =
+      new Set(participants.map((p) => p.name)).size !== participants.length;
+   if (hasDuplicateNames) {
+      return {
+         message: "Duplicate names can be confusing. Try a nickname instead!",
       };
    }
    await EmailQueue.enqueue(participants);
@@ -43,7 +65,7 @@ function parseFormData(formData: FormData): Participant[] {
    const participants = input.filter((p) => p.name && p.email);
    const incomplete = input.filter((p) => p.name || p.email);
    if (participants.length !== incomplete.length) {
-      throw new Error("Please fill out both fields on each row.");
+      throw new Error("Oops! Please fill out both fields on each row.");
    }
    return participants as Participant[];
 }
