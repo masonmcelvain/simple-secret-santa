@@ -24,9 +24,8 @@ export async function queue(_prev: FormState, formData: FormData) {
  * React doesn't seem to support a list of objects in a form.
  */
 function parseFormData(formData: FormData): Participant[] {
-   const rawFormData = Object.fromEntries(formData.entries());
    const parsed: Record<number, Partial<Participant>> = {};
-   for (const [key, value] of Object.entries(rawFormData)) {
+   for (const [key, value] of formData) {
       const isName = key.includes("name");
       const isEmail = key.includes("email");
       if (!isName && !isEmail) continue;
