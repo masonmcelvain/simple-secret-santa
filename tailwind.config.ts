@@ -1,12 +1,18 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-   content: [
-      "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-      "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-   ],
-   theme: {},
-   plugins: [],
+   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+   theme: {
+      extend: {
+         backgroundColor: {
+            "chakra-active-dark": "rgb(237,242,247,.16)",
+            "chakra-hover-dark": "rgb(237,242,247,.1)",
+         },
+         ringColor: {
+            "chakra-focus": "rgba(66,153,225,0.6)",
+         },
+      },
+   },
+   plugins: [require("@tailwindcss/typography")],
 };
 export default config;
