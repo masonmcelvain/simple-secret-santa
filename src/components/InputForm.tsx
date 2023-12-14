@@ -1,46 +1,36 @@
 "use client";
 
-import { Participant } from "@/models/participant";
+import { FormState, queue } from "@/app/actions";
 import { useState } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { Button } from "./Button";
 
 const MIN_ROWS = 5;
 const MORE_ROWS = 5;
 
+const initialState: FormState = {
+   message: "",
+};
+
 export function InputForm() {
-   // could use a server action instead of an api endpoint
-   const [participants, setParticipants] = useState<Participant[]>(
-      getEmptyParticipants(MIN_ROWS),
-   );
+   const [participantCount, setParticipantCount] = useState(MIN_ROWS);
    const { pending } = useFormStatus();
-   const getOnChange =
-      (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
-         const { name, value } = event.target;
-         const newParticipants = [...participants];
-         newParticipants[index][name as keyof Participant] = value;
-         setParticipants(newParticipants);
-      };
-   const [error, setError] = useState("");
+   const [state, formAction] = useFormState(queue, initialState);
    return (
-      <form noValidate>
+      <form action={formAction} noValidate>
          <table className="border-separate border-spacing-y-2 sm:border-spacing-y-0">
             <thead className="border-0">
                <tr>
                   <th>Participants 🥳</th>
                </tr>
             </thead>
-            <tbody className="peer sm:space-y-2" onFocus={() => setError("")}>
-               {participants.map((participant, index) => (
-                  <InputRow
-                     key={index}
-                     participant={participant}
-                     onChange={getOnChange(index)}
-                  />
+            <tbody className="peer sm:space-y-2">
+               {Array.from({ length: participantCount }).map((_, index) => (
+                  <InputRow key={index} index={index} />
                ))}
             </tbody>
-            <caption className="caption-bottom text-red-500 peer-focus-within:invisible">
-               {error}&nbsp;
+            <caption aria-live="polite" className="caption-bottom text-red-500">
+               {state?.message}&nbsp;
             </caption>
          </table>
          <div className="flex justify-between">
@@ -48,44 +38,21 @@ export function InputForm() {
                aria-disabled={pending}
                onClick={(event) => {
                   event.preventDefault();
-                  setParticipants([
-                     ...participants,
-                     ...getEmptyParticipants(MORE_ROWS),
-                  ]);
+                  setParticipantCount((count) => count + MORE_ROWS);
                }}
             >
-               Add rows
+               Add more
             </Button>
-            <Button
-               aria-disabled={pending}
-               onClick={async (event) => {
-                  event.preventDefault();
-                  const valid = participants.filter((p) => p.name && p.email);
-                  const incomplete = participants.filter(
-                     (p) => p.name || p.email,
-                  );
-                  if (valid.length !== incomplete.length) {
-                     setError("Please fill out both fields on each row.");
-                     return;
-                  }
-                  await fetch("/api/queues/email", {
-                     method: "POST",
-                     body: JSON.stringify(valid),
-                  });
-               }}
-            >
-               Submit
-            </Button>
+            <Button aria-disabled={pending}>Submit</Button>
          </div>
       </form>
    );
 }
 
 type InputRowProps = {
-   participant?: Participant;
-   onChange: React.ChangeEventHandler<HTMLInputElement>;
+   index: number;
 };
-function InputRow({ participant, onChange }: InputRowProps) {
+function InputRow({ index }: InputRowProps) {
    return (
       <tr className="rounded-lg border-0 shadow-sm sm:flex">
          {/* dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 */}
@@ -93,9 +60,7 @@ function InputRow({ participant, onChange }: InputRowProps) {
             <input
                placeholder="Name"
                type="text"
-               name="name"
-               value={participant?.name ?? ""}
-               onChange={onChange}
+               name={`name${index}`}
                onKeyDown={(e) => {
                   e.key === "Enter" && e.preventDefault();
                }}
@@ -107,9 +72,7 @@ function InputRow({ participant, onChange }: InputRowProps) {
             <input
                placeholder="Email"
                type="email"
-               name="email"
-               value={participant?.email ?? ""}
-               onChange={onChange}
+               name={`email${index}`}
                onKeyDown={(e) => {
                   e.key === "Enter" && e.preventDefault();
                }}
@@ -119,8 +82,4 @@ function InputRow({ participant, onChange }: InputRowProps) {
          </td>
       </tr>
    );
-}
-
-function getEmptyParticipants(count: number) {
-   return Array.from({ length: count }).map(() => ({ name: "", email: "" }));
 }
