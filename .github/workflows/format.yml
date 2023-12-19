@@ -1,0 +1,29 @@
+name: Format
+
+on: push
+
+jobs:
+   prettier:
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout
+           uses: actions/checkout@v4
+         - name: Install PNPM
+           run: corepack enable && corepack prepare pnpm@8 --activate
+         - name: Install workspaces
+           run: pnpm install
+         - name: Run Prettier
+           run: pnpm format
+         - name: Detect diff
+           id: detect-diff
+           run: |
+              if [ ! -z "$(git status --short)" ]; then
+                 echo "::set-output name=HAS_DIFF::true"
+              else
+                 echo "::set-output name=HAS_DIFF::false"
+              fi
+         - name: Assert no diff
+           if: steps.detect-diff.outputs.HAS_DIFF == 'true'
+           run: |
+              git diff
+              exit 1

@@ -1,0 +1,16 @@
+name: ESLint
+
+on: push
+
+jobs:
+   eslint:
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout
+           uses: actions/checkout@v4
+         - name: Install PNPM
+           run: corepack enable && corepack prepare pnpm@8 --activate
+         - name: Install workspaces
+           run: pnpm install
+         - name: Run linter
+           run: pnpm lint
