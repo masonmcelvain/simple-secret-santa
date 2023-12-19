@@ -14,19 +14,19 @@
       "type-check": "tsc --pretty"
    },
    "dependencies": {
+      "@faire/mjml-react": "3.3.0",
       "@heroicons/react": "2.0.18",
       "react": "18.2.0",
       "react-dom": "18.2.0",
       "next": "14.0.4",
       "nodemailer": "6.9.7",
       "mjml": "4.14.1",
-      "mjml-react": "2.0.8",
       "quirrel": "1.14.1"
    },
    "devDependencies": {
       "typescript": "5.3.2",
       "@tailwindcss/typography": "0.5.10",
-      "@types/mjml-react": "2.0.10",
+      "@types/mjml": "4.7.4",
       "@types/node": "20.10.4",
       "@types/nodemailer": "6.4.14",
       "@types/react": "18.2.43",
@@ -40,6 +40,7 @@
       "eslint-config-prettier": "9.1.0",
       "husky": "8.0.3",
       "lint-staged": "15.2.0",
+      "null-loader": "4.0.1",
       "prettier": "3.1.0",
       "prettier-plugin-tailwindcss": "0.5.7"
    },

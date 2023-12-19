@@ -1,17 +1,38 @@
-import { Participant } from "@/models/participant";
+import { MAIL_HOST, MAIL_PASS, MAIL_PORT, MAIL_USER } from "@/config/env";
+import type { Participant } from "@/models/participant";
+import { createTransport } from "nodemailer";
 import { Queue } from "quirrel/next-app";
+import { renderEmail } from "./renderEmail";
 
-export const EmailQueue = Queue<Participant[]>(
-   "api/queues/email",
-   async (participants) => {
-      const assignments = assign(participants);
-      console.log("Sending email to participants:", assignments);
-   },
-);
-
+export const EmailQueue = Queue<Participant[]>("api/queues/email", handler);
 export const POST = EmailQueue;
 
 const MAX_TRIES = 50;
+const mail = createTransport({
+   host: MAIL_HOST,
+   port: Number(MAIL_PORT),
+   auth: {
+      user: MAIL_USER,
+      pass: MAIL_PASS,
+   },
+});
+
+async function handler(participants: Participant[]) {
+   const assignments = assign(participants);
+   for (const [participant, assignee] of assignments) {
+      const { html, errors } = renderEmail({ participant, assignee });
+      if (errors.length > 0) {
+         console.error("Failed to render email template", errors);
+         throw new Error("Failed to render email template");
+      }
+      await mail.sendMail({
+         to: participant.email,
+         from: "secretsanta@quirrel.dev",
+         subject: "You secret santa assignment",
+         html,
+      });
+   }
+}
 
 function assign(participants: Participant[]) {
    for (let i = 0; i < MAX_TRIES; i++) {
