@@ -13,7 +13,6 @@ export async function queue(_prev: FormState, formData: FormData) {
    let participants;
    try {
       participants = parseFormData(formData);
-      console.log("particpants", participants);
    } catch (e) {
       if (e instanceof Error) return { message: e.message };
       throw e;
