@@ -62,7 +62,7 @@ function InputRow({ index }: InputRowProps) {
          {/* dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 */}
          <td className="relative -mt-px block w-full p-0 first:rounded-t-lg last:rounded-b-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-s-lg sm:first:rounded-se-none sm:last:rounded-e-lg sm:last:rounded-es-none">
             <input
-               placeholder="Name"
+               placeholder={`Name for member ${index + 1}`}
                type="text"
                name={`name${index}`}
                onKeyDown={(e) => {
