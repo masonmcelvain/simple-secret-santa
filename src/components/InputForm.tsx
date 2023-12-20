@@ -4,7 +4,7 @@ import { FormState, queue } from "@/app/actions";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { Button } from "./Button";
-import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
+import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 
 const MIN_ROWS = 5;
 const MORE_ROWS = 5;
