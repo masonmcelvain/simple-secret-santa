@@ -1,5 +1,5 @@
-import { Template } from "@/components/email";
-import type { TemplateProps } from "@/components/email";
+import { Template } from "./components/Template";
+import type { TemplateProps } from "./components/Template";
 import { renderToMjml } from "@faire/mjml-react/utils/renderToMjml";
 import mjml2html from "mjml";
 
