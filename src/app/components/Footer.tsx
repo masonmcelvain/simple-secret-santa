@@ -20,7 +20,7 @@ export function Footer() {
                <a
                   href="https://github.com/masonmcelvain/hop"
                   target="_blank"
-                  className="opacity-70 transition duration-200 hover:opacity-80 active:opacity-90"
+                  className="hover:opacity-100 lg:opacity-30"
                >
                   <GitHubIcon className="h-10 w-10 fill-[#1E3050]" />
                </a>
