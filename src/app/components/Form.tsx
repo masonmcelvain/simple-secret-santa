@@ -19,15 +19,21 @@ export function Form() {
    const [state, formAction] = useFormState(queue, initialState);
    return (
       <form action={formAction}>
-         <table className="border-separate border-spacing-y-2 sm:border-spacing-y-0">
+         <table className="mt-0 border-separate border-spacing-y-2 sm:border-spacing-y-0">
             <thead className="border-0">
                <tr>
                   <th>Participants 🥳</th>
                </tr>
             </thead>
             <tbody className="sm:space-y-2">
-               {Array.from({ length: participantCount }).map((_, index) => (
-                  <InputRow key={index} index={index} />
+               <InputRow key={0} index={0} />
+               <tr key="hr">
+                  <td>
+                     <hr className="m-0 border-t-2 border-gray-200 sm:mt-2" />
+                  </td>
+               </tr>
+               {Array.from({ length: participantCount - 1 }).map((_, index) => (
+                  <InputRow key={index + 1} index={index + 1} />
                ))}
             </tbody>
             <caption aria-live="polite" className="caption-bottom text-red-500">
@@ -57,12 +63,14 @@ type InputRowProps = {
    index: number;
 };
 function InputRow({ index }: InputRowProps) {
+   const namePlaceholder =
+      index > 0 ? `Name for member ${index + 1}` : "Your name";
    return (
       <tr className="rounded-lg border-0 shadow-sm sm:flex">
          {/* dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 */}
          <td className="relative -mt-px block w-full p-0 first:rounded-t-lg last:rounded-b-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-s-lg sm:first:rounded-se-none sm:last:rounded-e-lg sm:last:rounded-es-none">
             <input
-               placeholder={`Name for member ${index + 1}`}
+               placeholder={namePlaceholder}
                type="text"
                name={`name${index}`}
                onKeyDown={(e) => {
