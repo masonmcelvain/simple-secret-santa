@@ -1,7 +1,7 @@
 export function ReadmeSection() {
    return (
       <section>
-         <h2>How it works</h2>
+         <h2 className="mt-0">How it works</h2>
          <ol className="list-none text-xl">
             <li>
                ✍️ You enter the names and emails of the folks you want to play

@@ -19,7 +19,7 @@ export function Button({
    border ||= "border border-gray-200 py-3 px-4";
    return (
       <button
-         className={`${className} ${border} inline-flex select-none appearance-none items-center justify-center whitespace-nowrap rounded-md bg-transparent align-middle ${text} font-semibold leading-tight outline outline-2 outline-offset-2 outline-transparent transition duration-200 focus-visible:outline-none focus-visible:ring focus-visible:ring-chakra-focus ${pseudo}`}
+         className={`${className} ${border} inline-flex select-none appearance-none items-center justify-center whitespace-nowrap bg-transparent align-middle ${text} font-semibold leading-tight outline outline-2 outline-offset-2 outline-transparent ${pseudo}`}
          onClick={onClick}
       >
          {children}
