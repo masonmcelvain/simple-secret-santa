@@ -1,5 +1,5 @@
-import { InputForm } from "@/components/InputForm";
 import { BadgeSection } from "@/sections/BadgeSection";
+import { Form } from "./components/Form";
 
 export default function Page() {
    return (
@@ -16,7 +16,7 @@ export default function Page() {
             <li>📫️ Each person recieves an email with their assignment.</li>
          </ol>
          <div className="flex w-full flex-col items-center">
-            <InputForm />
+            <Form />
          </div>
          <BadgeSection />
       </div>

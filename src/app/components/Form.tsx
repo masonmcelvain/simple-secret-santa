@@ -1,9 +1,9 @@
 "use client";
 
 import { FormState, queue } from "@/app/actions";
+import { Button } from "@/components/Button";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
-import { Button } from "./Button";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 
 const MIN_ROWS = 5;
@@ -13,7 +13,7 @@ const initialState: FormState = {
    message: "",
 };
 
-export function InputForm() {
+export function Form() {
    const [participantCount, setParticipantCount] = useState(MIN_ROWS);
    const { pending } = useFormStatus();
    const [state, formAction] = useFormState(queue, initialState);
