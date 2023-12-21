@@ -1,5 +1,5 @@
-import { BadgeSection } from "@/sections/BadgeSection";
 import { Form } from "./components/Form";
+import { BadgeSection } from "./sections/BadgeSection";
 
 export default function Page() {
    return (
