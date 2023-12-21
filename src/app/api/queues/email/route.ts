@@ -2,7 +2,7 @@ import { MAIL_HOST, MAIL_PASS, MAIL_PORT, MAIL_USER } from "@/config/env";
 import type { Participant } from "@/models/participant";
 import { createTransport } from "nodemailer";
 import { Queue } from "quirrel/next-app";
-import { renderEmail } from "./renderEmail";
+import { renderEmail } from "./render-email";
 
 export const EmailQueue = Queue<Participant[]>("api/queues/email", handler);
 export const POST = EmailQueue;
