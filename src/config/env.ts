@@ -10,9 +10,8 @@ function requireEnvVariable(
    if (env == null) {
       if (typeof window !== "undefined") {
          if (envName.startsWith("NEXT_PUBLIC")) {
-            console.warn(`environment variable "${envName}" is not defined`);
+            throw new Error(`environment variable "${envName}" is not defined`);
          }
-         return env as any;
       }
       throw new Error(`environment variable "${envName}" is not defined`);
    }
