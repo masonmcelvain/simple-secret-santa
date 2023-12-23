@@ -10,8 +10,11 @@ export function Header() {
                <Image
                   src={secretSanta}
                   alt="Picture of Santa dressed as a spy"
-                  sizes="(max-width: 768px) 800vw, (max-width: 1200px) 30vw, 20vw"
-                  style={{ margin: "0", borderRadius: "100%" }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                  style={{
+                     borderTopLeftRadius: "100%",
+                     borderTopRightRadius: "100%",
+                  }}
                   priority
                />
             </Link>
