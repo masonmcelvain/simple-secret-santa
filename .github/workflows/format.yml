@@ -9,7 +9,7 @@ jobs:
          - name: Checkout
            uses: actions/checkout@v4
          - name: Install PNPM
-           run: corepack enable && corepack prepare pnpm@8 --activate
+           run: corepack enable && corepack prepare pnpm@latest --activate
          - name: Install workspaces
            run: pnpm install
          - name: Run Prettier
