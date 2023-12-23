@@ -9,6 +9,7 @@
       "dev": "concurrently 'next dev' 'quirrel'",
       "build": "next build",
       "start": "next start",
+      "format": "prettier --write .",
       "lint": "next lint",
       "prepare": "husky install",
       "type-check": "tsc --pretty"
