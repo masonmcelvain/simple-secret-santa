@@ -2,7 +2,7 @@ import { GitHubIcon } from "@/components/icons/github-icon";
 
 export function Footer() {
    return (
-      <footer className="mb-8 mt-auto pt-8">
+      <footer>
          <nav
             aria-labelledby="footer-navigation"
             className="flex w-full items-center justify-between"
@@ -10,7 +10,7 @@ export function Footer() {
             <h2 id="footer-navigation" className="sr-only">
                Footer Navigation
             </h2>
-            <p>
+            <p className="mb-0">
                Made by{" "}
                <a href="https://github.com/masonmcelvain" target="_blank">
                   @masonmcelvain

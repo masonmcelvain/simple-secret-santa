@@ -22,7 +22,7 @@ export function Form() {
          <table className="mt-0 border-separate border-spacing-y-2 sm:border-spacing-y-0">
             <thead className="border-0">
                <tr>
-                  <th>Participants 🥳</th>
+                  <th className="text-lg">Participants 🥳</th>
                </tr>
             </thead>
             <tbody className="sm:space-y-2">
