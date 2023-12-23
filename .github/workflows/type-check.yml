@@ -12,5 +12,8 @@ jobs:
            run: corepack enable && corepack prepare pnpm@latest --activate
          - name: Install workspaces
            run: pnpm install
+         # https://github.com/vercel/next.js/discussions/47010
+         - name: Build next.env.d.ts
+           run: pnpm lint || true
          - name: Check types
            run: pnpm type-check
