@@ -12,7 +12,11 @@ export function Footer() {
             </h2>
             <p className="mb-0">
                Made by{" "}
-               <a href="https://github.com/masonmcelvain" target="_blank">
+               <a
+                  href="https://github.com/masonmcelvain"
+                  target="_blank"
+                  className="text-gray-700"
+               >
                   @masonmcelvain
                </a>
             </p>
