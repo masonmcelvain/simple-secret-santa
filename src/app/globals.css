@@ -7,6 +7,8 @@
       @apply duration-200;
       @apply rounded;
       @apply transition;
+      @apply underline;
+      @apply text-teal-500;
    }
 
    button {
@@ -22,5 +24,42 @@
       @apply outline-none;
       @apply ring;
       @apply ring-chakra-focus;
+   }
+
+   h1 {
+      @apply text-4xl;
+      @apply font-extrabold;
+      @apply text-[#111827];
+   }
+
+   h2 {
+      @apply text-2xl;
+      @apply font-bold;
+      @apply text-[#111827];
+   }
+
+   h3 {
+      @apply text-xl;
+      @apply font-semibold;
+      @apply text-[#111827];
+   }
+
+   li {
+      @apply pl-[.375rem];
+      @apply my-2;
+      @apply text-gray-700;
+   }
+
+   ol {
+      @apply mb-5;
+      @apply pl-[1.625rem];
+   }
+
+   p {
+      @apply text-gray-700;
+   }
+
+   td {
+      @apply p-0;
    }
 }

@@ -16,7 +16,7 @@ export function Header() {
                />
             </Link>
             <Link className="no-underline" href="/">
-               <h1 className="mb-0 whitespace-nowrap text-3xl md:text-4xl">
+               <h1 className="whitespace-nowrap text-3xl md:text-4xl">
                   Simple Secret Santa
                </h1>
             </Link>

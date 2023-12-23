@@ -19,8 +19,8 @@ export function Form() {
    const [state, formAction] = useFormState(queue, initialState);
    return (
       <form action={formAction}>
-         <table className="mt-0 border-separate border-spacing-y-2 sm:border-spacing-y-0">
-            <thead className="border-0">
+         <table className="mb-2 border-separate border-spacing-y-2 sm:mb-0">
+            <thead className="sm:text-left">
                <tr>
                   <th className="text-lg">Participants 🥳</th>
                </tr>
@@ -28,15 +28,18 @@ export function Form() {
             <tbody className="sm:space-y-2">
                <InputRow key={0} index={0} />
                <tr key="hr">
-                  <td>
-                     <hr className="m-0 border-t-2 border-gray-200 sm:mt-2" />
+                  <td className="flex justify-center">
+                     <hr className="my-2 w-11/12 border-t-2 border-gray-200 sm:mb-0" />
                   </td>
                </tr>
                {Array.from({ length: participantCount - 1 }).map((_, index) => (
                   <InputRow key={index + 1} index={index + 1} />
                ))}
             </tbody>
-            <caption aria-live="polite" className="caption-bottom text-red-500">
+            <caption
+               aria-live="polite"
+               className="min-h-[42px] caption-bottom text-sm text-red-500"
+            >
                {state.message && (
                   <ExclamationCircleIcon className="mr-2 inline-block h-5 w-5" />
                )}
@@ -68,7 +71,7 @@ function InputRow({ index }: InputRowProps) {
    return (
       <tr className="rounded-lg border-0 shadow-sm sm:flex">
          {/* dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 */}
-         <td className="relative -mt-px block w-full p-0 first:rounded-t-lg last:rounded-b-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-s-lg sm:first:rounded-se-none sm:last:rounded-e-lg sm:last:rounded-es-none">
+         <td className="relative -mt-px block w-full first:rounded-t-lg last:rounded-b-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-s-lg sm:first:rounded-se-none sm:last:rounded-e-lg sm:last:rounded-es-none">
             <input
                placeholder={namePlaceholder}
                type="text"
@@ -80,7 +83,7 @@ function InputRow({ index }: InputRowProps) {
             />
          </td>
          {/* dark:border-gray-700 dark:bg-slate-900 dark:text-gray-400 dark:focus:ring-gray-600 */}
-         <td className="relative -mt-px block w-full p-0 first:rounded-t-lg last:rounded-b-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-s-lg sm:first:rounded-se-none sm:last:rounded-e-lg sm:last:rounded-es-none">
+         <td className="relative -mt-px block w-full first:rounded-t-lg last:rounded-b-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-s-lg sm:first:rounded-se-none sm:last:rounded-e-lg sm:last:rounded-es-none">
             <input
                placeholder="Email"
                type="email"
