@@ -5,7 +5,6 @@ import {
    ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 
-// TODO: add link to issues page
 export function BadgeSection() {
    return (
       <section className="flex flex-col items-center justify-between space-y-8 md:flex-row md:space-x-8 md:space-y-0 md:px-24">
@@ -34,7 +33,7 @@ export function BadgeSection() {
             </div>
             <p className="text-center text-xl">
                Questions and requests are welcome on{" "}
-               <ExternalLink href="https://github.com/masonmcelvain/simple-secret-santa">
+               <ExternalLink href="https://github.com/masonmcelvain/simple-secret-santa/issues">
                   GitHub
                </ExternalLink>
                .
