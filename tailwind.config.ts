@@ -11,6 +11,9 @@ const config: Config = {
          ringColor: {
             "chakra-focus": "rgba(66,153,225,0.6)",
          },
+         textColor: {
+            heading: "#111827",
+         },
       },
    },
 };
