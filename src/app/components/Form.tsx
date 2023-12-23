@@ -4,10 +4,14 @@ import { FormState, queue } from "@/app/actions";
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
-import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import {
+   ExclamationCircleIcon,
+   MinusIcon,
+   PlusIcon,
+} from "@heroicons/react/24/outline";
 
 const MIN_ROWS = 5;
-const MORE_ROWS = 5;
+const MAX_ROWS = 100;
 
 const initialState: FormState = {
    message: "",
@@ -47,15 +51,32 @@ export function Form() {
             </caption>
          </table>
          <div className="flex justify-between">
-            <Button
-               aria-disabled={pending}
-               onClick={(event) => {
-                  event.preventDefault();
-                  setParticipantCount((count) => count + MORE_ROWS);
-               }}
-            >
-               Add more
-            </Button>
+            <div className="flex space-x-2">
+               <Button
+                  disabled={pending || participantCount >= MAX_ROWS}
+                  onClick={(event) => {
+                     event.preventDefault();
+                     setParticipantCount((count) =>
+                        Math.min(count + 1, MAX_ROWS),
+                     );
+                  }}
+                  padding="p-3"
+               >
+                  <PlusIcon className="h-5 w-5" />
+               </Button>
+               <Button
+                  disabled={pending || participantCount <= MIN_ROWS}
+                  onClick={(event) => {
+                     event.preventDefault();
+                     setParticipantCount((count) =>
+                        Math.max(count - 1, MIN_ROWS),
+                     );
+                  }}
+                  padding="p-3"
+               >
+                  <MinusIcon className="h-5 w-5" />
+               </Button>
+            </div>
             <Button aria-disabled={pending}>Submit</Button>
          </div>
       </form>
