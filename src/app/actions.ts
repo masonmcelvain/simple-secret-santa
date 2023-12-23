@@ -17,9 +17,9 @@ export async function queue(_prev: FormState, formData: FormData) {
       if (e instanceof Error) return { message: e.message };
       throw e;
    }
-   if (participants.length < 2) {
+   if (participants.length < 3) {
       return {
-         message: "You can't play by yourself, silly! 😉",
+         message: "You can't play with less than 3 people, silly! 😉",
       };
    }
    if (participants.length > MAX_SIZE) {
