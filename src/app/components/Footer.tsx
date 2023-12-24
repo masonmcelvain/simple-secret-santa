@@ -21,7 +21,10 @@ export function Footer() {
                </a>
             </p>
             <div className="flex space-x-2 md:space-x-4">
-               <a href="https://github.com/masonmcelvain/hop" target="_blank">
+               <a
+                  href="https://github.com/masonmcelvain/simple-secret-santa"
+                  target="_blank"
+               >
                   <GitHubIcon className="h-10 w-10 fill-[#1E3050] hover:opacity-100 lg:opacity-30" />
                </a>
             </div>
