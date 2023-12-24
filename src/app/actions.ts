@@ -4,46 +4,51 @@ import type { Participant } from "@/models/participant";
 import { EmailQueue } from "./api/queues/email/route";
 
 export type FormState = {
-   message: string;
+   error: string;
 };
 
 const MAX_SIZE = 100;
 
-export async function queue(_prev: FormState, formData: FormData) {
+export async function queue(
+   _prev: FormState,
+   formData: FormData,
+): Promise<FormState> {
    let participants;
    try {
       participants = parseFormData(formData);
    } catch (e) {
-      if (e instanceof Error) return { message: e.message };
+      if (e instanceof Error) return { error: e.message };
       throw e;
    }
+   const hasMessage = formData.get("hasMessage") === "on";
+   const message = hasMessage ? (formData.get("message") as string) : "";
    if (participants.length < 3) {
       return {
-         message: "You can't play with less than 3 people, silly! 😉",
+         error: "You can't play with less than 3 people, silly! 😉",
       };
    }
    if (participants.length > MAX_SIZE) {
       return {
-         message:
-            "Boy you're popular! We don't support groups greater than 100 at this time, try a smaller group.",
+         error: "Boy you're popular! We don't support groups greater than 100 at this time, try a smaller group.",
       };
    }
    const hasDuplicateEmails =
       new Set(participants.map((p) => p.email)).size !== participants.length;
    if (hasDuplicateEmails) {
       return {
-         message: "No double dipping! Please list each email only once.",
+         error: "No double dipping! Please list each email only once.",
       };
    }
    const hasDuplicateNames =
       new Set(participants.map((p) => p.name)).size !== participants.length;
    if (hasDuplicateNames) {
       return {
-         message: "Duplicate names can be confusing. Try a nickname instead!",
+         error: "Duplicate names can be confusing. Try a nickname instead!",
       };
    }
-   await EmailQueue.enqueue(participants);
-   return { message: "" };
+   const organizer = participants[0];
+   await EmailQueue.enqueue({ message, organizer, participants });
+   return { error: "" };
 }
 
 /**

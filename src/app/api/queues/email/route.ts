@@ -4,7 +4,12 @@ import { createTransport } from "nodemailer";
 import { Queue } from "quirrel/next-app";
 import { renderEmail } from "./render-email";
 
-export const EmailQueue = Queue<Participant[]>("api/queues/email", handler);
+type QueueProps = {
+   message: string;
+   organizer: Participant;
+   participants: Participant[];
+};
+export const EmailQueue = Queue<QueueProps>("api/queues/email", handler);
 export const POST = EmailQueue;
 
 const MAX_TRIES = 50;
@@ -17,10 +22,15 @@ const mail = createTransport({
    },
 });
 
-async function handler(participants: Participant[]) {
+async function handler({ message, organizer, participants }: QueueProps) {
    const assignments = assign(participants);
    for (const [participant, assignee] of assignments) {
-      const { html, errors } = renderEmail({ participant, assignee });
+      const { html, errors } = renderEmail({
+         assignee,
+         message,
+         organizer,
+         participant,
+      });
       if (errors.length > 0) {
          console.error("Failed to render email template", errors);
          throw new Error("Failed to render email template");

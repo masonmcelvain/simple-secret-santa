@@ -14,7 +14,7 @@ const MIN_ROWS = 5;
 const MAX_ROWS = 100;
 
 const initialState: FormState = {
-   message: "",
+   error: "",
 };
 
 export function Form() {
@@ -22,8 +22,11 @@ export function Form() {
    const { pending } = useFormStatus();
    const [state, formAction] = useFormState(queue, initialState);
    return (
-      <form action={formAction}>
-         <table className="mb-2 border-separate border-spacing-y-2 sm:mb-0">
+      <form
+         action={formAction}
+         className="max-w-96 flex w-full flex-col items-center px-8 sm:w-auto"
+      >
+         <table className="border-separate border-spacing-y-2">
             <thead className="sm:text-left">
                <tr>
                   <th className="text-lg">Participants 🥳</th>
@@ -40,17 +43,34 @@ export function Form() {
                   <InputRow key={index + 1} index={index + 1} />
                ))}
             </tbody>
-            <caption
-               aria-live="polite"
-               className="min-h-[42px] caption-bottom text-sm text-red-500"
-            >
-               {state.message && (
-                  <ExclamationCircleIcon className="mr-2 inline-block h-5 w-5" />
-               )}
-               {state?.message}&nbsp;
-            </caption>
          </table>
-         <div className="flex justify-between">
+         <fieldset className="mb-4 mt-2 w-full">
+            <input
+               type="checkbox"
+               name="hasMessage"
+               className="peer px-2 align-middle focus:outline-none focus:ring focus:ring-chakra-focus"
+               id="checkbox"
+            />
+            <label htmlFor="checkbox" className="ms-3 text-sm font-semibold">
+               Add a message
+            </label>
+            <textarea
+               aria-live="polite"
+               name="message"
+               placeholder="Budget, date, etc."
+               className="mt-2 box-border hidden h-48 w-full rounded border border-gray-200 text-sm transition duration-200 focus-visible:outline-none focus-visible:ring focus-visible:ring-chakra-focus peer-checked:block sm:h-24"
+            />
+         </fieldset>
+         {state.error && (
+            <p
+               aria-live="polite"
+               className="mb-4 text-center text-sm text-red-500"
+            >
+               <ExclamationCircleIcon className="mr-2 inline-block h-5 w-5" />
+               {state?.error}
+            </p>
+         )}
+         <div className="flex w-full justify-between">
             <div className="flex space-x-2">
                <Button
                   disabled={pending || participantCount >= MAX_ROWS}
