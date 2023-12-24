@@ -38,7 +38,7 @@ async function handler({ message, organizer, participants }: QueueProps) {
       await mail.sendMail({
          to: participant.email,
          from: "secretsanta@quirrel.dev",
-         subject: "You secret santa assignment",
+         subject: "🎁🎅 Your Secret Santa Assignment Revealed!",
          html,
       });
    }

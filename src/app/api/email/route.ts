@@ -11,11 +11,15 @@ export async function GET() {
          email: "john@example.com",
       },
       organizer: {
-         name: "Santa Claus",
+         name: "Jay Doe",
          email: "claus@example.com",
       },
-      message:
-         "Ho ho ho! Our gift exchange is scheduled for December 25th. Please bring a gift worth $20 or less. Can't wait to see you! Warm regards, Santa",
+      message: `Ho ho ho!
+
+         Our gift exchange 🎁 is scheduled for December 25th. Please bring a gift worth $20 or less. Can't wait to see you!
+
+         Warm regards,
+         Jay`,
    });
    if (errors.length > 0) {
       console.error("Failed to render email template", errors);
