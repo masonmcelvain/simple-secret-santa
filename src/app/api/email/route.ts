@@ -14,9 +14,9 @@ export async function GET() {
          name: "Jay Doe",
          email: "claus@example.com",
       },
-      message: `Ho ho ho!
+      message: `Ho ho ho! 🦌🎅
 
-         Our gift exchange 🎁 is scheduled for December 25th. Please bring a gift worth $20 or less. Can't wait to see you!
+         Our gift exchange is scheduled for December 25th. Please bring a gift worth $20 or less. Can't wait to see you!
 
          Warm regards,
          Jay`,
