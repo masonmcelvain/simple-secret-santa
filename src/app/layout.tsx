@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Footer, Header } from "./components";
 import "./globals.css";
 
@@ -12,3 +13,8 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
       </html>
    );
 }
+
+export const metadata: Metadata = {
+   title: "Simple Secret Santa",
+   description: "A simple, free, and open-source Secret Santa generator.",
+};
