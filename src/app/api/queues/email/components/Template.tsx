@@ -99,7 +99,7 @@ a {
                      gift exchange!
                   </Text>
                   <MjmlImage
-                     alt="Santa Claus riding a reindeer across the sky in front of the northern lights."
+                     alt="Santa Claus dressed secretively."
                      src={imgSrc}
                      width="144px"
                      borderRadius="100% 100% 0 0"
