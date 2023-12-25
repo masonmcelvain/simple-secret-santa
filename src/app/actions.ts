@@ -1,7 +1,7 @@
 "use server";
 
 import type { Participant } from "@/models/participant";
-import { EmailQueue } from "./api/queues/email/route";
+import { EmailQueue } from "./api/queues/email/email-queue";
 
 export type FormState = {
    error: string;
