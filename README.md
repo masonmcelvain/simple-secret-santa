@@ -20,7 +20,9 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Visit https://ui.quirrel.dev/ to view queued jobs. More details can be found here: https://docs.quirrel.dev/getting-started/next-js.
+Visit https://ui.quirrel.dev to view queued jobs. More details can be found here: https://docs.quirrel.dev/getting-started/next-js.
+
+You can use any SMTP service to test out the emails. I use https://ethereal.email.
 
 ### Production
 
