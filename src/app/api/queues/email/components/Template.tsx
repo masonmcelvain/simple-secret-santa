@@ -1,4 +1,5 @@
 import secretSanta from "@/app/assets/images/secret-santa.jpg";
+import { APP_ORIGIN } from "@/config/env";
 import type { Participant } from "@/models/participant";
 import {
    Mjml,
@@ -16,6 +17,8 @@ import type { IMjmlTextProps } from "@faire/mjml-react";
 const gray200 = "#E5E7EB";
 const gray700 = "#374151";
 const teal500 = "#14B8A6";
+
+const imgSrc = `${APP_ORIGIN}${secretSanta.src}`;
 
 export type TemplateProps = {
    assignee: Participant;
@@ -53,8 +56,8 @@ a {
          <MjmlBody className="font-sans">
             <MjmlSection>
                <MjmlColumn>
-                  <Text>🎄 Happy holidays {participant.name}!</Text>
-                  <Text>Your Secret Santa assignment has arrived!</Text>
+                  <Text>Happy holidays {participant.name}!</Text>
+                  <Text>Your Secret Santa assignment has arrived.</Text>
                   <Text fontWeight="700" fontSize="20px">
                      🎁 You&apos;re getting a gift for: {assignee.name}
                   </Text>
@@ -97,7 +100,7 @@ a {
                   </Text>
                   <MjmlImage
                      alt="Santa Claus riding a reindeer across the sky in front of the northern lights."
-                     src={secretSanta.src}
+                     src={imgSrc}
                      width="144px"
                      borderRadius="100% 100% 0 0"
                   />

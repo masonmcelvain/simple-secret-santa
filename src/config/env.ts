@@ -1,3 +1,7 @@
+export const APP_ORIGIN = requireEnvVariable(
+   process.env.APP_ORIGIN,
+   "APP_ORIGIN",
+);
 export const MAIL_HOST = requireEnvVariable(process.env.MAIL_HOST, "MAIL_HOST");
 export const MAIL_PORT = requireEnvVariable(process.env.MAIL_PORT, "MAIL_PORT");
 export const MAIL_USER = requireEnvVariable(process.env.MAIL_USER, "MAIL_USER");
