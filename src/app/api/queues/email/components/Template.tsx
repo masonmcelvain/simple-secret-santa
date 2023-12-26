@@ -116,7 +116,7 @@ a {
                   <Text color={gray700} fontSize="14px">
                      These emails are not recurring so there is no need to
                      unsubscribe. Your personal data is encrypted and never
-                     stored, shared, or sold.
+                     shared or sold.
                   </Text>
                   <Text color={gray700} fontSize="14px">
                      Does something seem wrong? Ask a question{" "}

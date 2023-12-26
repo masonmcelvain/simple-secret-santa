@@ -23,7 +23,7 @@ export function BadgeSection() {
                <h3>Safe</h3>
             </div>
             <p className="text-center text-xl">
-               Personal data is encrypted and never stored, shared, or sold.
+               Personal data is encrypted and never shared or sold.
             </p>
          </div>
          <div className="max-w-xs space-y-2">
