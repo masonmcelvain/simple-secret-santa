@@ -2,25 +2,33 @@
 
 import { FormState, queue } from "@/app/actions";
 import { Button } from "@/components/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import {
    ExclamationCircleIcon,
    MinusIcon,
    PlusIcon,
 } from "@heroicons/react/24/outline";
+import { SuccessModal } from "./SuccessModal";
 
 const MIN_ROWS = 5;
 const MAX_ROWS = 100;
 
 const initialState: FormState = {
    error: "",
+   success: false,
 };
 
 export function Form() {
    const [participantCount, setParticipantCount] = useState(MIN_ROWS);
    const { pending } = useFormStatus();
    const [state, formAction] = useFormState(queue, initialState);
+   const [open, setOpen] = useState(false);
+   useEffect(() => {
+      if (state.success) {
+         setOpen(true);
+      }
+   }, [state.success]);
    return (
       <form
          action={formAction}
@@ -97,8 +105,9 @@ export function Form() {
                   <MinusIcon className="h-5 w-5" />
                </Button>
             </div>
-            <Button aria-disabled={pending}>Submit</Button>
+            <Button disabled={pending}>Submit</Button>
          </div>
+         <SuccessModal open={open} setOpen={setOpen} />
       </form>
    );
 }

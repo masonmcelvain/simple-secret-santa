@@ -5,6 +5,7 @@ import { EmailQueue } from "./api/queues/email/email-queue";
 
 export type FormState = {
    error: string;
+   success: boolean;
 };
 
 const MAX_SIZE = 100;
@@ -17,7 +18,7 @@ export async function queue(
    try {
       participants = parseFormData(formData);
    } catch (e) {
-      if (e instanceof Error) return { error: e.message };
+      if (e instanceof Error) return { error: e.message, success: false };
       throw e;
    }
    const hasMessage = formData.get("hasMessage") === "on";
@@ -25,11 +26,13 @@ export async function queue(
    if (participants.length < 3) {
       return {
          error: "You can't play with less than 3 people, silly! 😉",
+         success: false,
       };
    }
    if (participants.length > MAX_SIZE) {
       return {
          error: "Boy you're popular! We don't support groups greater than 100 at this time, try a smaller group.",
+         success: false,
       };
    }
    const hasDuplicateEmails =
@@ -37,6 +40,7 @@ export async function queue(
    if (hasDuplicateEmails) {
       return {
          error: "No double dipping! Please list each email only once.",
+         success: false,
       };
    }
    const hasDuplicateNames =
@@ -44,11 +48,12 @@ export async function queue(
    if (hasDuplicateNames) {
       return {
          error: "Duplicate names can be confusing. Try a nickname instead!",
+         success: false,
       };
    }
    const organizer = participants[0];
    await EmailQueue.enqueue({ message, organizer, participants });
-   return { error: "" };
+   return { error: "", success: true };
 }
 
 /**
