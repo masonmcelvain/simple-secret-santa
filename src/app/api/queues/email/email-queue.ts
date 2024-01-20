@@ -11,7 +11,6 @@ type QueueProps = {
 };
 export const EmailQueue = Queue<QueueProps>("api/queues/email", handler);
 
-const MAX_TRIES = 50;
 const mail = createTransport({
    host: MAIL_HOST,
    port: Number(MAIL_PORT),
@@ -44,17 +43,10 @@ async function handler({ message, organizer, participants }: QueueProps) {
 }
 
 function assign(participants: Participant[]) {
-   for (let i = 0; i < MAX_TRIES; i++) {
-      const pairs = tryAssign(participants);
-      const isValid = pairs.every(([a, b]) => a.email !== b.email);
-      if (isValid) return pairs;
-   }
-   throw new Error("Failed to assign participants");
-}
-
-function tryAssign(participants: Participant[]): [Participant, Participant][] {
    const shuffled = [...participants].sort(() => Math.random() - 0.5);
-   return participants.map((participant) => {
-      return [participant, shuffled.pop() as Participant];
-   });
+   return shuffled.map((participant, index, shuffled) =>
+      index === shuffled.length - 1
+         ? [participant, shuffled[0]]
+         : [participant, shuffled[index + 1]],
+   );
 }
