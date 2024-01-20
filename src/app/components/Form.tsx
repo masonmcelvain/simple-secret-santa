@@ -32,7 +32,7 @@ export function Form() {
    return (
       <form
          action={formAction}
-         className="flex w-full max-w-96 flex-col items-center px-8 sm:w-auto"
+         className="flex w-full max-w-96 flex-col items-center px-8 sm:w-auto sm:max-w-none"
       >
          <table className="border-separate border-spacing-y-2">
             <thead className="sm:text-left">
