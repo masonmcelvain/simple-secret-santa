@@ -35,7 +35,7 @@
       "@typescript-eslint/eslint-plugin": "7.16.1",
       "autoprefixer": "10.4.19",
       "concurrently": "8.2.2",
-      "postcss": "8.4.39",
+      "postcss": "8.4.40",
       "tailwindcss": "3.4.6",
       "eslint": "8.57.0",
       "eslint-config-next": "14.2.5",
