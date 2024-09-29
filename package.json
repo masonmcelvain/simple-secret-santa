@@ -15,7 +15,7 @@
       "type-check": "tsc --pretty"
    },
    "dependencies": {
-      "@faire/mjml-react": "3.3.0",
+      "@faire/mjml-react": "3.4.0",
       "@headlessui/react": "2.1.8",
       "@heroicons/react": "2.1.5",
       "react": "18.3.1",
