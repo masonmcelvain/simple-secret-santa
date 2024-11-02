@@ -40,8 +40,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       '@types/node':
-        specifier: 20.17.1
-        version: 20.17.1
+        specifier: 20.17.5
+        version: 20.17.5
       '@types/nodemailer':
         specifier: 6.4.16
         version: 6.4.16
@@ -595,8 +595,8 @@ packages:
   '@types/mjml@4.7.4':
     resolution: {integrity: sha512-vyi1vzWgMzFMwZY7GSZYX0GU0dmtC8vLHwpgk+NWmwbwRSrlieVyJ9sn5elodwUfklJM7yGl0zQeet1brKTWaQ==}
 
-  '@types/node@20.17.1':
-    resolution: {integrity: sha512-j2VlPv1NnwPJbaCNv69FO/1z4lId0QmGvpT41YxitRtWlg96g/j8qcv2RKsLKe2F6OJgyXhupN1Xo17b2m139Q==}
+  '@types/node@20.17.5':
+    resolution: {integrity: sha512-n8FYY/pRxu496441gIcAQFZPKXbhsd6VZygcq+PTSZ75eMh/Ke0hCAROdUa21qiFqKNsPPYic46yXDO1JGiPBQ==}
 
   '@types/nodemailer@6.4.16':
     resolution: {integrity: sha512-uz6hN6Pp0upXMcilM61CoKyjT7sskBoOWpptkjjJp8jIMlTdc3xG01U7proKkXzruMS4hS0zqtHNkNPFB20rKQ==}
@@ -4034,7 +4034,7 @@ snapshots:
 
   '@types/ioredis-mock@8.2.5':
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.5
       ioredis: 5.3.2
     transitivePeerDependencies:
       - supports-color
@@ -4049,13 +4049,13 @@ snapshots:
     dependencies:
       '@types/mjml-core': 4.7.4
 
-  '@types/node@20.17.1':
+  '@types/node@20.17.5':
     dependencies:
       undici-types: 6.19.6
 
   '@types/nodemailer@6.4.16':
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.5
 
   '@types/prop-types@15.7.11': {}
 
@@ -5792,7 +5792,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.17.1
+      '@types/node': 20.17.5
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -6756,7 +6756,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.17.1
+      '@types/node': 20.17.5
       long: 5.2.3
 
   proxy-addr@2.0.7:
