@@ -45,7 +45,7 @@
       "null-loader": "4.0.1",
       "prettier": "3.4.2",
       "prettier-plugin-tailwindcss": "0.6.9",
-      "oxlint": "0.15.2"
+      "oxlint": "0.15.3"
    },
    "lint-staged": {
       "*": "prettier --write --ignore-unknown"
