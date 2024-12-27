@@ -11,22 +11,23 @@
       "start": "next start",
       "format": "prettier --write .",
       "lint": "next lint",
-      "prepare": "husky install",
+      "prepare": "husky",
       "type-check": "tsc --pretty"
    },
    "dependencies": {
       "@faire/mjml-react": "3.4.0",
       "@headlessui/react": "2.2.0",
       "@heroicons/react": "2.2.0",
-      "react": "19.0.0",
-      "react-dom": "19.0.0",
+      "mjml": "4.15.3",
       "next": "15.1.2",
       "nodemailer": "6.9.16",
-      "mjml": "4.15.3",
-      "quirrel": "1.14.1"
+      "quirrel": "1.14.1",
+      "react": "19.0.0",
+      "react-dom": "19.0.0"
    },
    "devDependencies": {
-      "typescript": "5.7.2",
+      "@eslint/eslintrc": "3.2.0",
+      "@eslint/js": "9.17.0",
       "@types/mjml": "4.7.4",
       "@types/node": "22.10.2",
       "@types/nodemailer": "6.4.17",
@@ -35,17 +36,18 @@
       "@typescript-eslint/eslint-plugin": "7.18.0",
       "autoprefixer": "10.4.20",
       "concurrently": "9.1.1",
-      "postcss": "8.4.49",
-      "tailwindcss": "3.4.17",
-      "eslint": "8.57.1",
+      "eslint": "9.17.0",
       "eslint-config-next": "15.1.2",
       "eslint-config-prettier": "9.1.0",
       "husky": "9.1.7",
       "lint-staged": "15.2.11",
       "null-loader": "4.0.1",
+      "oxlint": "0.15.3",
+      "postcss": "8.4.49",
       "prettier": "3.4.2",
       "prettier-plugin-tailwindcss": "0.6.9",
-      "oxlint": "0.15.3"
+      "tailwindcss": "3.4.17",
+      "typescript": "5.7.2"
    },
    "lint-staged": {
       "*": "prettier --write --ignore-unknown"
