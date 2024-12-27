@@ -11,7 +11,7 @@
       "start": "next start",
       "format": "prettier --write .",
       "lint": "next lint",
-      "prepare": "husky install",
+      "prepare": "husky",
       "type-check": "tsc --pretty"
    },
    "dependencies": {
