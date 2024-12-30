@@ -127,7 +127,9 @@ function InputRow({ index }: InputRowProps) {
                type="text"
                name={`name${index}`}
                onKeyDown={(e) => {
-                  e.key === "Enter" && e.preventDefault();
+                  if (e.key === "Enter") {
+                     e.preventDefault();
+                  }
                }}
                className="-ms-px rounded-[inherit] border border-gray-200 bg-inherit px-4 py-3 pe-11 text-sm transition duration-200 focus-visible:z-10 focus-visible:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-chakra-focus"
             />
@@ -139,7 +141,9 @@ function InputRow({ index }: InputRowProps) {
                type="email"
                name={`email${index}`}
                onKeyDown={(e) => {
-                  e.key === "Enter" && e.preventDefault();
+                  if (e.key === "Enter") {
+                     e.preventDefault();
+                  }
                }}
                className="-ms-px rounded-[inherit] border border-gray-200 bg-inherit px-4 py-3 pe-11 text-sm transition duration-200 focus-visible:z-10 focus-visible:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-chakra-focus invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
             />
