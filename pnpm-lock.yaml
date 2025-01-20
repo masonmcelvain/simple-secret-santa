@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@faire/mjml-react':
-        specifier: 3.4.0
-        version: 3.4.0(mjml@4.15.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 3.5.0
+        version: 3.5.0(mjml@4.15.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@headlessui/react':
         specifier: 2.2.0
         version: 2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -229,12 +229,12 @@ packages:
     resolution: {integrity: sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@faire/mjml-react@3.4.0':
-    resolution: {integrity: sha512-0rfn/ZmF5ve0MV7jq3SjIKlxRhRIVxatzZGURPWKfZTMK4ShStlrzbUSF6mUCF9yAcsTxJdAZlvMz+IkpGWp3Q==}
+  '@faire/mjml-react@3.5.0':
+    resolution: {integrity: sha512-PZBTjZwARVlNT/D4fr7nseULpAMlH6/v0MVoowTcDjLRNaSbXHBjI1JShxuDsJYLh2mBEM8PdZeVjIuaAZAoDw==}
     peerDependencies:
       mjml: ^4.13.0
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@fastify/accept-negotiator@1.1.0':
     resolution: {integrity: sha512-OIHZrb2ImZ7XG85HXOONLcJWGosv7sIvM2ifAPQVhg9Lv7qdmMBNVaai4QTdyuaqbKM5eO6sLSQOYI7wEQeCJQ==}
@@ -3883,7 +3883,7 @@ snapshots:
       '@eslint/core': 0.10.0
       levn: 0.4.1
 
-  '@faire/mjml-react@3.4.0(mjml@4.15.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@faire/mjml-react@3.5.0(mjml@4.15.3)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       lodash.kebabcase: 4.1.1
       mjml: 4.15.3
