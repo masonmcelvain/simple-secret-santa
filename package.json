@@ -42,7 +42,7 @@
       "husky": "9.1.7",
       "lint-staged": "15.4.1",
       "null-loader": "4.0.1",
-      "oxlint": "0.15.7",
+      "oxlint": "0.15.8",
       "postcss": "8.5.1",
       "prettier": "3.4.2",
       "prettier-plugin-tailwindcss": "0.6.10",
