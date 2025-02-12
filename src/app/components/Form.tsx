@@ -2,8 +2,7 @@
 
 import { FormState, queue } from "@/app/actions";
 import { Button } from "@/components/Button";
-import { useEffect, useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useEffect, useState } from "react";
 import {
    ExclamationCircleIcon,
    MinusIcon,
@@ -21,8 +20,7 @@ const initialState: FormState = {
 
 export function Form() {
    const [participantCount, setParticipantCount] = useState(MIN_ROWS);
-   const { pending } = useFormStatus();
-   const [state, formAction] = useFormState(queue, initialState);
+   const [state, formAction, pending] = useActionState(queue, initialState);
    const [open, setOpen] = useState(false);
    useEffect(() => {
       if (state.success) {
