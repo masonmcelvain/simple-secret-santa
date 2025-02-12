@@ -130,10 +130,7 @@ a {
                   </Text>
                   <Text color={gray700} fontSize="14px">
                      Brought to you by{" "}
-                     <a
-                        href="https://www.simple-secret-santa.com"
-                        target="_blank"
-                     >
+                     <a href={APP_ORIGIN} target="_blank">
                         Simple Secret Santa
                      </a>
                      .
