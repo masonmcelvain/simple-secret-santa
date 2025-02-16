@@ -20,7 +20,7 @@ export function Button({
    padding ||= "py-3 px-4";
    return (
       <button
-         className={`${className} ${padding} inline-flex select-none appearance-none items-center justify-center whitespace-nowrap border border-gray-200 bg-transparent align-middle ${text} font-semibold leading-tight outline outline-2 outline-offset-2 outline-transparent ${pseudo} disabled:opacity-40`}
+         className={`${className} ${padding} inline-flex appearance-none items-center justify-center border border-gray-200 bg-transparent align-middle whitespace-nowrap select-none ${text} leading-tight font-semibold outline outline-2 outline-offset-2 outline-transparent ${pseudo} disabled:opacity-40`}
          disabled={disabled}
          onClick={onClick}
       >

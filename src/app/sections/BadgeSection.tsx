@@ -7,7 +7,7 @@ import {
 
 export function BadgeSection() {
    return (
-      <section className="flex flex-col items-center justify-between space-y-8 md:flex-row md:space-x-8 md:space-y-0 md:px-24">
+      <section className="flex flex-col items-center justify-between space-y-8 md:flex-row md:space-y-0 md:space-x-8 md:px-24">
          <div className="max-w-xs space-y-2">
             <div className="flex items-center justify-center space-x-2">
                <CursorArrowRaysIcon className="h-8 w-8" />
