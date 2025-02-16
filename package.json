@@ -3,7 +3,7 @@
    "version": "0.1.0",
    "packageManager": "pnpm@10.4.0",
    "engines": {
-      "node": "22.13.1"
+      "node": "22.14.0"
    },
    "scripts": {
       "dev": "concurrently 'next dev' 'quirrel'",
