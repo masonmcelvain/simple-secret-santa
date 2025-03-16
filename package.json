@@ -39,7 +39,7 @@
       "eslint-config-next": "15.2.2",
       "eslint-config-prettier": "10.1.1",
       "husky": "9.1.7",
-      "lint-staged": "15.4.3",
+      "lint-staged": "15.5.0",
       "null-loader": "4.0.1",
       "oxlint": "0.15.15",
       "postcss": "8.5.3",
