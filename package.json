@@ -1,7 +1,7 @@
 {
    "name": "secret-santa",
    "version": "0.1.0",
-   "packageManager": "pnpm@10.12.4",
+   "packageManager": "pnpm@10.13.1",
    "engines": {
       "node": "22.17.0"
    },
