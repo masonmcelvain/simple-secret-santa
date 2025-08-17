@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@faire/mjml-react':
-        specifier: 3.5.0
-        version: 3.5.0(mjml@4.15.3)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 3.5.2
+        version: 3.5.2(mjml@4.15.3)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@headlessui/react':
         specifier: 2.2.7
         version: 2.2.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -345,8 +345,8 @@ packages:
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@faire/mjml-react@3.5.0':
-    resolution: {integrity: sha512-PZBTjZwARVlNT/D4fr7nseULpAMlH6/v0MVoowTcDjLRNaSbXHBjI1JShxuDsJYLh2mBEM8PdZeVjIuaAZAoDw==}
+  '@faire/mjml-react@3.5.2':
+    resolution: {integrity: sha512-YzYNCHyjXye1C9lGVXbIw+4r5/24eyk+IhT2jTnBf2OgoYX9xXIjIB89vmHmCYaBOvXNNtZbSwZ3naFzhV5jRg==}
     peerDependencies:
       mjml: ^4.13.0
       react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -4627,7 +4627,7 @@ snapshots:
       '@eslint/core': 0.15.2
       levn: 0.4.1
 
-  '@faire/mjml-react@3.5.0(mjml@4.15.3)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@faire/mjml-react@3.5.2(mjml@4.15.3)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       lodash.kebabcase: 4.1.1
       mjml: 4.15.3
