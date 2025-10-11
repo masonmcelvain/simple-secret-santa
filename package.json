@@ -20,7 +20,7 @@
       "@heroicons/react": "2.2.0",
       "mjml": "4.16.1",
       "next": "15.5.4",
-      "nodemailer": "7.0.7",
+      "nodemailer": "7.0.9",
       "quirrel": "1.14.1",
       "react": "19.2.0",
       "react-dom": "19.2.0"
