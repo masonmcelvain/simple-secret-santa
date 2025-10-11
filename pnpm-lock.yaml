@@ -49,8 +49,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4
       '@types/node':
-        specifier: 22.18.9
-        version: 22.18.9
+        specifier: 22.18.10
+        version: 22.18.10
       '@types/nodemailer':
         specifier: 7.0.2
         version: 7.0.2
@@ -1151,8 +1151,8 @@ packages:
   '@types/mjml@4.7.4':
     resolution: {integrity: sha512-vyi1vzWgMzFMwZY7GSZYX0GU0dmtC8vLHwpgk+NWmwbwRSrlieVyJ9sn5elodwUfklJM7yGl0zQeet1brKTWaQ==}
 
-  '@types/node@22.18.9':
-    resolution: {integrity: sha512-5yBtK0k/q8PjkMXbTfeIEP/XVYnz1R9qZJ3yUicdEW7ppdDJfe+MqXEhpqDL3mtn4Wvs1u0KLEG0RXzCgNpsSg==}
+  '@types/node@22.18.10':
+    resolution: {integrity: sha512-anNG/V/Efn/YZY4pRzbACnKxNKoBng2VTFydVu8RRs5hQjikP8CQfaeAV59VFSCzKNp90mXiVXW2QzV56rwMrg==}
 
   '@types/nodemailer@7.0.2':
     resolution: {integrity: sha512-Zo6uOA9157WRgBk/ZhMpTQ/iCWLMk7OIs/Q9jvHarMvrzUUP/MDdPHL2U1zpf57HrrWGv4nYQn5uIxna0xY3xw==}
@@ -5457,7 +5457,7 @@ snapshots:
 
   '@types/ioredis-mock@8.2.5':
     dependencies:
-      '@types/node': 22.18.9
+      '@types/node': 22.18.10
       ioredis: 5.3.2
     transitivePeerDependencies:
       - supports-color
@@ -5472,14 +5472,14 @@ snapshots:
     dependencies:
       '@types/mjml-core': 4.7.4
 
-  '@types/node@22.18.9':
+  '@types/node@22.18.10':
     dependencies:
       undici-types: 6.21.0
 
   '@types/nodemailer@7.0.2':
     dependencies:
       '@aws-sdk/client-sesv2': 3.864.0
-      '@types/node': 22.18.9
+      '@types/node': 22.18.10
     transitivePeerDependencies:
       - aws-crt
 
@@ -7243,7 +7243,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.18.9
+      '@types/node': 22.18.10
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -8175,7 +8175,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 22.18.9
+      '@types/node': 22.18.10
       long: 5.2.3
 
   proxy-addr@2.0.7:
