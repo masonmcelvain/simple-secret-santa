@@ -20,7 +20,7 @@
       "@heroicons/react": "2.2.0",
       "mjml": "4.16.1",
       "next": "15.5.6",
-      "nodemailer": "7.0.9",
+      "nodemailer": "7.0.10",
       "quirrel": "1.14.1",
       "react": "19.2.0",
       "react-dom": "19.2.0"
@@ -31,7 +31,7 @@
       "@tailwindcss/postcss": "4.1.16",
       "@types/mjml": "4.7.4",
       "@types/node": "22.18.11",
-      "@types/nodemailer": "7.0.2",
+      "@types/nodemailer": "7.0.3",
       "@types/react": "19.2.2",
       "@types/react-dom": "19.2.2",
       "@typescript-eslint/eslint-plugin": "8.46.2",
