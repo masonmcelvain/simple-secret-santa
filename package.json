@@ -31,7 +31,7 @@
       "@tailwindcss/postcss": "4.1.17",
       "@types/mjml": "4.7.4",
       "@types/node": "22.19.1",
-      "@types/nodemailer": "7.0.3",
+      "@types/nodemailer": "7.0.4",
       "@types/react": "19.2.5",
       "@types/react-dom": "19.2.3",
       "@typescript-eslint/eslint-plugin": "8.46.4",
