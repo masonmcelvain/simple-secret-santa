@@ -22,8 +22,8 @@
       "next": "15.5.11",
       "nodemailer": "7.0.13",
       "quirrel": "1.14.1",
-      "react": "19.2.3",
-      "react-dom": "19.2.3"
+      "react": "19.2.4",
+      "react-dom": "19.2.4"
    },
    "devDependencies": {
       "@eslint/eslintrc": "3.3.3",
@@ -32,7 +32,7 @@
       "@types/mjml": "4.7.4",
       "@types/node": "22.19.7",
       "@types/nodemailer": "7.0.9",
-      "@types/react": "19.2.9",
+      "@types/react": "19.2.10",
       "@types/react-dom": "19.2.3",
       "@typescript-eslint/eslint-plugin": "8.53.1",
       "@typescript-eslint/parser": "8.53.1",
